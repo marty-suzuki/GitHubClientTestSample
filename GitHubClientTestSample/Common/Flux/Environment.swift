@@ -11,26 +11,54 @@ import Foundation
 final class Environment {
     static let shared = Environment()
 
-    let routeActionCreator: RouteActionCreator
-    let routeDispatcher: RouteActionCreator
-    let routeStore: RouteStore
+    let flux: Flux
+    private(set) lazy var trackingModel = TrackingModel.shared
 
-    let repositoryActionCreator: RepositoryActionCreator
-    let repositoryDispatcher: RepositoryDispatcher
-    let repositoryStore: RepositoryStore
+    init(flux: Flux = .init(),
+         trackingModel: TrackingModel? = nil) {
+        self.flux = flux
+        
+        if let trackingModel = trackingModel {
+            self.trackingModel = trackingModel
+        }
+    }
+}
 
-    init(routeActionCreator: RouteActionCreator = .shared,
-         routeDispatcher: RouteActionCreator = .shared,
-         routeStore: RouteStore = .shared,
-         repositoryActionCreator: RepositoryActionCreator = .shared,
-         repositoryDispatcher:  RepositoryDispatcher = .shared,
-         repositoryStore: RepositoryStore = .shared) {
+extension Environment {
 
-        self.routeActionCreator = routeActionCreator
-        self.routeDispatcher = routeDispatcher
-        self.routeStore = routeStore
-        self.repositoryActionCreator = repositoryActionCreator
-        self.repositoryDispatcher = repositoryDispatcher
-        self.repositoryStore = repositoryStore
+    final class Flux {
+
+        let routeActionCreator: RouteActionCreator
+        let routeDispatcher: RouteActionCreator
+        let routeStore: RouteStore
+
+        let repositoryActionCreator: RepositoryActionCreator
+        let repositoryDispatcher: RepositoryDispatcher
+        let repositoryStore: RepositoryStore
+
+        let deviceActionCreator: DeviceActionCreator
+        let deviceDispatcher: DeviceDispatcher
+        let deviceStore: DeviceStore
+
+        init(routeActionCreator: RouteActionCreator = .shared,
+             routeDispatcher: RouteActionCreator = .shared,
+             routeStore: RouteStore = .shared,
+             repositoryActionCreator: RepositoryActionCreator = .shared,
+             repositoryDispatcher:  RepositoryDispatcher = .shared,
+             repositoryStore: RepositoryStore = .shared,
+             deviceActionCreator: DeviceActionCreator = .shared,
+             deviceDispatcher: DeviceDispatcher = .shared,
+             deviceStore: DeviceStore = .shared) {
+
+            self.routeActionCreator = routeActionCreator
+            self.routeDispatcher = routeDispatcher
+            self.routeStore = routeStore
+            self.repositoryActionCreator = repositoryActionCreator
+            self.repositoryDispatcher = repositoryDispatcher
+            self.repositoryStore = repositoryStore
+            self.deviceActionCreator = deviceActionCreator
+            self.deviceDispatcher = deviceDispatcher
+            self.deviceStore = deviceStore
+        }
     }
 }

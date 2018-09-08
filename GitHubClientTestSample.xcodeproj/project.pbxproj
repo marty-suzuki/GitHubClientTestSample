@@ -51,6 +51,16 @@
 		37C1FE6F2143AD0D005EB806 /* UITableView.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE6E2143AD0D005EB806 /* UITableView.extension.swift */; };
 		37C1FE712143B9BE005EB806 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE702143B9BE005EB806 /* LoadingView.swift */; };
 		37C1FE732143B9CB005EB806 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C1FE722143B9CB005EB806 /* LoadingView.xib */; };
+		37C1FE762143C438005EB806 /* TrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE752143C438005EB806 /* TrackingEvent.swift */; };
+		37C1FE782143C443005EB806 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE772143C443005EB806 /* Tracker.swift */; };
+		37C1FE7A2143F8CA005EB806 /* TrackingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE792143F8CA005EB806 /* TrackingContainer.swift */; };
+		37C1FE7D21440078005EB806 /* TrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE7C21440078005EB806 /* TrackingModel.swift */; };
+		37C1FE8021440221005EB806 /* DeviceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE7F21440221005EB806 /* DeviceStore.swift */; };
+		37C1FE8221440247005EB806 /* DeviceDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE8121440247005EB806 /* DeviceDispatcher.swift */; };
+		37C1FE84214402B3005EB806 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE83214402B3005EB806 /* UserDefaultsManager.swift */; };
+		37C1FE86214406C8005EB806 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE85214406C8005EB806 /* OptionalType.swift */; };
+		37C1FE8821442601005EB806 /* DeviceActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE8721442601005EB806 /* DeviceActionCreator.swift */; };
+		37C1FE8A21442756005EB806 /* EncodableLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE8921442756005EB806 /* EncodableLogger.swift */; };
 		B92782C25CA6E45A0255301D /* Pods_GitHubClientTestSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BA8995EC72C085FB7863D1 /* Pods_GitHubClientTestSample.framework */; };
 		F16A0BF09EB67C63A6C61990 /* Pods_GitHubClientTestSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A62277F842B5AA3D9D44627 /* Pods_GitHubClientTestSampleTests.framework */; };
 /* End PBXBuildFile section */
@@ -116,6 +126,16 @@
 		37C1FE6E2143AD0D005EB806 /* UITableView.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.extension.swift; sourceTree = "<group>"; };
 		37C1FE702143B9BE005EB806 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		37C1FE722143B9CB005EB806 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		37C1FE752143C438005EB806 /* TrackingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingEvent.swift; sourceTree = "<group>"; };
+		37C1FE772143C443005EB806 /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
+		37C1FE792143F8CA005EB806 /* TrackingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingContainer.swift; sourceTree = "<group>"; };
+		37C1FE7C21440078005EB806 /* TrackingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingModel.swift; sourceTree = "<group>"; };
+		37C1FE7F21440221005EB806 /* DeviceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStore.swift; sourceTree = "<group>"; };
+		37C1FE8121440247005EB806 /* DeviceDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDispatcher.swift; sourceTree = "<group>"; };
+		37C1FE83214402B3005EB806 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		37C1FE85214406C8005EB806 /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
+		37C1FE8721442601005EB806 /* DeviceActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActionCreator.swift; sourceTree = "<group>"; };
+		37C1FE8921442756005EB806 /* EncodableLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableLogger.swift; sourceTree = "<group>"; };
 		47BA8995EC72C085FB7863D1 /* Pods_GitHubClientTestSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubClientTestSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79DDFDB5D74E3A3FE599692D /* Pods-GitHubClientTestSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubClientTestSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubClientTestSampleTests/Pods-GitHubClientTestSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		99F3EF4046E779D00F77DD16 /* Pods-GitHubClientTestSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubClientTestSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubClientTestSample/Pods-GitHubClientTestSample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +196,7 @@
 		3703BFB6213C3CD70081CA6B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				37C1FE742143C420005EB806 /* Tracking */,
 				37B5F2D0214041ED00219777 /* Util */,
 				3703BFE1213C57FC0081CA6B /* Extension */,
 				3703BFBF213C3FAB0081CA6B /* API */,
@@ -188,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				37B5F2CE2140404100219777 /* Environment.swift */,
+				37C1FE7E21440212005EB806 /* Device */,
 				3703BFDA213C572C0081CA6B /* Route */,
 				3703BFD9213C57240081CA6B /* Repository */,
 			);
@@ -264,6 +286,7 @@
 				3703BFE4213C58910081CA6B /* UIViewController.extension.swift */,
 				37B5F2D92140529F00219777 /* WKWebView.extension.swift */,
 				37C1FE6E2143AD0D005EB806 /* UITableView.extension.swift */,
+				37C1FE85214406C8005EB806 /* OptionalType.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -318,6 +341,8 @@
 			children = (
 				37B5F2D12140420400219777 /* Either.swift */,
 				37B5F2CA21403C3400219777 /* ReadOnlyRelay.swift */,
+				37C1FE83214402B3005EB806 /* UserDefaultsManager.swift */,
+				37C1FE8921442756005EB806 /* EncodableLogger.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -332,6 +357,27 @@
 				37C1FE722143B9CB005EB806 /* LoadingView.xib */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		37C1FE742143C420005EB806 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				37C1FE792143F8CA005EB806 /* TrackingContainer.swift */,
+				37C1FE752143C438005EB806 /* TrackingEvent.swift */,
+				37C1FE772143C443005EB806 /* Tracker.swift */,
+				37C1FE7C21440078005EB806 /* TrackingModel.swift */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
+		37C1FE7E21440212005EB806 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				37C1FE7F21440221005EB806 /* DeviceStore.swift */,
+				37C1FE8121440247005EB806 /* DeviceDispatcher.swift */,
+				37C1FE8721442601005EB806 /* DeviceActionCreator.swift */,
+			);
+			path = Device;
 			sourceTree = "<group>";
 		};
 		78B0D5C5B0D1A78B616A0B3C /* Frameworks */ = {
@@ -532,6 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C1FE782143C443005EB806 /* Tracker.swift in Sources */,
 				37B5F2C62140288A00219777 /* GitHub.ItemsResponse.swift in Sources */,
 				3703BFE5213C58910081CA6B /* UIViewController.extension.swift in Sources */,
 				37B5F2C42140288A00219777 /* GitHub.Session.swift in Sources */,
@@ -541,27 +588,36 @@
 				37B3E17B213C377500357BBF /* AppDelegate.swift in Sources */,
 				37B5F2D22140420400219777 /* Either.swift in Sources */,
 				3703BFC5213C40E20081CA6B /* RepositoryDispatcher.swift in Sources */,
+				37C1FE762143C438005EB806 /* TrackingEvent.swift in Sources */,
 				37B5F2C32140288A00219777 /* GitHub.Pagination.swift in Sources */,
+				37C1FE8221440247005EB806 /* DeviceDispatcher.swift in Sources */,
 				3703BFC3213C40D60081CA6B /* RepositoryActionCreator.swift in Sources */,
 				3703BFD1213C50180081CA6B /* RepositoryDetailViewController.swift in Sources */,
 				3703BFD7213C52110081CA6B /* RootViewController.swift in Sources */,
 				3703BFE0213C57770081CA6B /* RouteStore.swift in Sources */,
+				37C1FE8821442601005EB806 /* DeviceActionCreator.swift in Sources */,
+				37C1FE86214406C8005EB806 /* OptionalType.swift in Sources */,
 				3703BFD8213C52110081CA6B /* RootViewModel.swift in Sources */,
 				37B5F2CF2140404100219777 /* Environment.swift in Sources */,
+				37C1FE8A21442756005EB806 /* EncodableLogger.swift in Sources */,
+				37C1FE8021440221005EB806 /* DeviceStore.swift in Sources */,
 				37B5F2D6214050D700219777 /* RepositoryDetailViewModel.swift in Sources */,
 				37B5F2CB21403C3400219777 /* ReadOnlyRelay.swift in Sources */,
 				3703BFE3213C58080081CA6B /* Extension.swift in Sources */,
 				3703BFDC213C57600081CA6B /* RouteActionCreator.swift in Sources */,
 				37B5F2CD21403E7100219777 /* RepositorySearchViewModel.swift in Sources */,
 				3703BFE9213C68820081CA6B /* ViewType.swift in Sources */,
+				37C1FE7D21440078005EB806 /* TrackingModel.swift in Sources */,
 				37C1FE6F2143AD0D005EB806 /* UITableView.extension.swift in Sources */,
 				37C1FE712143B9BE005EB806 /* LoadingView.swift in Sources */,
 				37B5F2DA2140529F00219777 /* WKWebView.extension.swift in Sources */,
 				37B5F2C72140288A00219777 /* GitHubRequest.swift in Sources */,
+				37C1FE84214402B3005EB806 /* UserDefaultsManager.swift in Sources */,
 				37B5F2D42140485800219777 /* RepositorySearchViewDataSource.swift in Sources */,
 				3703BFDE213C576D0081CA6B /* RouteDispatcher.swift in Sources */,
 				3703BFAC213C38980081CA6B /* RepositorySearchViewController.swift in Sources */,
 				37B5F2C82140288A00219777 /* GitHub.SearchRepositoriesRequest.swift in Sources */,
+				37C1FE7A2143F8CA005EB806 /* TrackingContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,7 @@ final class RepositorySearchViewModel {
     let repositories: ReadOnlyRelay<[GitHub.Repository]>
     let nextPage: ReadOnlyRelay<Int?>
 
+    private let parPage: Int = 20
     private let disposeBag = DisposeBag()
 
     init(viewDidAppear: Observable<Bool>,
@@ -26,9 +27,10 @@ final class RepositorySearchViewModel {
          selectedIndexPath: Observable<IndexPath>,
          isBottom: Observable<Bool>,
          environment: Environment = .shared) {
-        let repositoryActionCreator = environment.repositoryActionCreator
-        let repositoryStore = environment.repositoryStore
-        let routeActionCreator = environment.routeActionCreator
+        let repositoryActionCreator = environment.flux.repositoryActionCreator
+        let repositoryStore = environment.flux.repositoryStore
+        let routeActionCreator = environment.flux.routeActionCreator
+        let trackingModel = environment.trackingModel
 
         self.repositories = repositoryStore.repositories
         self.nextPage = repositoryStore.nextPage
@@ -69,8 +71,9 @@ final class RepositorySearchViewModel {
 
         searchTrigger
             .withLatestFrom(nextPage.asObservable()) { ($0, $1) }
-            .subscribe(onNext: { [repositoryActionCreator] text, page in
-                repositoryActionCreator.searchRepositories(query: text, page: page, perPage: 19)
+            .subscribe(onNext: { [repositoryActionCreator, parPage] text, page in
+                repositoryActionCreator.searchRepositories(query: text, page: page, perPage: parPage)
+                trackingModel.sendTrackingEvent(.search(.init(query: text, page: page ?? 1)))
             })
             .disposed(by: disposeBag)
 
@@ -81,5 +84,13 @@ final class RepositorySearchViewModel {
                 routeActionCreator.setRouteCommand(.repositoryDetail(.object(repository)))
             })
             .disposed(by: disposeBag)
+
+        viewDidAppear
+            .map { _ in TrackingEvent.pageView(.repositorySearch) }
+            .subscribe(onNext: {
+                trackingModel.sendTrackingEvent($0)
+            })
+            .disposed(by: disposeBag)
+
     }
 }

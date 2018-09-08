@@ -19,7 +19,7 @@ extension GitHub {
 
 extension GitHub.Pagination {
     private enum Const {
-        static let regex = try! NSRegularExpression(pattern: ".*<https://api.github.com/.*page=(\\d+).*>; rel=\"(.*)\"", options: [])
+        static let regex = try! NSRegularExpression(pattern: ".*<https://api.github.com/.*(?:&|\\?)page=(\\d+).*>; rel=\"(.*)\"", options: [])
     }
 
     init(link: String) {

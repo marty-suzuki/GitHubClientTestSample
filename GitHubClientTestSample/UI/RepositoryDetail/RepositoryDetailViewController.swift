@@ -26,21 +26,18 @@ final class RepositoryDetailViewController: UIViewController {
 
     private let webView = WKWebView(frame: .zero)
 
+    private let data: RouteCommand.RepositoryData
     private lazy var viewModel: RepositoryDetailViewModel = {
-        return .init(estimatedProgress: webView.extension.estimatedProgress)
+        return .init(data: data,
+                     viewDidAppear: self.extension.viewDidAppear,
+                     estimatedProgress: webView.extension.estimatedProgress)
     }()
 
     private let disposeBag = DisposeBag()
 
     init(_ data: RouteCommand.RepositoryData) {
+        self.data = data
         super.init(nibName: "RepositoryDetailViewController", bundle: nil)
-
-        switch data {
-        case let .object(respository):
-            webView.load(URLRequest(url: respository.htmlURL))
-        case .id:
-            break
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,6 +51,12 @@ final class RepositoryDetailViewController: UIViewController {
             .bind(to: Binder(progressView) { progressView, progressWithAnimation in
                 progressView.setProgress(progressWithAnimation.0,
                                          animated: progressWithAnimation.1)
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.htmlURL
+            .bind(to: Binder(webView) { webView, url in
+                webView.load(URLRequest(url: url))
             })
             .disposed(by: disposeBag)
     }

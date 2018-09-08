@@ -23,7 +23,7 @@ final class RootViewModel {
 
     init(viewTypes: @escaping () -> [ViewType],
          environment: Environment = .shared) {
-        let routeStore = environment.routeStore
+        let routeStore = environment.flux.routeStore
         
         let _routeCommand = BehaviorRelay<RouteCommand>(value: .repositorySearch)
 
