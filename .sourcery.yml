@@ -1,0 +1,8 @@
+sources:
+  - GitHubClientTestSample
+  - GitHubClientTestSampleTests
+templates:
+  - GitHubClientTestSampleTests/Template/AutoPrivatePropertyAccessible.stencil
+output:
+  # https://bugs.swift.org/browse/SR-631
+  GitHubClientTestSampleTests/Gen/zzz.Sourcery.out.swift
