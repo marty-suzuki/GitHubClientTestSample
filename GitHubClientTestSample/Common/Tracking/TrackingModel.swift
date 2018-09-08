@@ -15,9 +15,9 @@ final class TrackingModel {
     private let deviceStore: DeviceStore
 
     init(tracker: TrackerType = Tracker.shared,
-         environment: Environment = .shared) {
+         deviceStore: DeviceStore = .shared) {
         self.tracker = tracker
-        self.deviceStore = environment.flux.deviceStore
+        self.deviceStore = deviceStore
     }
 
     func sendTrackingEvent(_ event: TrackingEvent) {

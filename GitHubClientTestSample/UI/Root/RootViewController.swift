@@ -21,10 +21,13 @@ final class RootViewController: UIViewController {
         return navigationController
     }()
 
+    // sourcery:begin: ignoreProperty
     private lazy var viewModel = RootViewModel(viewTypes: { [weak nc = currentNavigationController] in
         nc?.viewControllers.map { $0.viewType } ?? []
     })
+
     private let disposeBag = DisposeBag()
+    // sourcery:end
 
     init() {
         super.init(nibName: nil, bundle: nil)

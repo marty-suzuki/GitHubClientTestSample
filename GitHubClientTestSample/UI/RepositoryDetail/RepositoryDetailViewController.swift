@@ -26,7 +26,9 @@ final class RepositoryDetailViewController: UIViewController {
 
     private let webView = WKWebView(frame: .zero)
 
+    // sourcery:begin: ignoreProperty
     private let data: RouteCommand.RepositoryData
+
     private lazy var viewModel: RepositoryDetailViewModel = {
         return .init(data: data,
                      viewDidAppear: self.extension.viewDidAppear,
@@ -34,6 +36,7 @@ final class RepositoryDetailViewController: UIViewController {
     }()
 
     private let disposeBag = DisposeBag()
+    // sourcery:end
 
     init(_ data: RouteCommand.RepositoryData) {
         self.data = data

@@ -18,8 +18,8 @@ final class RepositoryActionCreator {
 
     private let disposeBag = DisposeBag()
 
-    init(session: GitHub.Session = .init(),
-         dispatcher: RepositoryDispatcher = .shared) {
+    init(dispatcher: RepositoryDispatcher = .shared,
+         session: GitHubSessionType = GitHub.Session.shared) {
 
         _searchRequest
             .map { _ in true }

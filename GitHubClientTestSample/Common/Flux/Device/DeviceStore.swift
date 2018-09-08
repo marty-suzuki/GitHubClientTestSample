@@ -15,14 +15,14 @@ final class DeviceStore {
     let deviceID: ReadOnlyRelay<String>
 
     init(dispatcher: DeviceDispatcher = .shared,
-         userDefaults: UserDefaultsManager = .shared) {
+         userDefaultsManager: UserDefaultsManager = .shared) {
 
         let deviceID: String
-        if let id = userDefaults[.deviceID] {
+        if let id = userDefaultsManager[.deviceID] {
             deviceID = id
         } else {
             deviceID = UUID().uuidString
-            userDefaults[.deviceID] = deviceID
+            userDefaultsManager[.deviceID] = deviceID
         }
         let _deviceID = BehaviorRelay<String>(value: deviceID)
         self.deviceID = ReadOnlyRelay(_deviceID)

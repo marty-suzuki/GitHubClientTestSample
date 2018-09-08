@@ -12,15 +12,12 @@ final class Environment {
     static let shared = Environment()
 
     let flux: Flux
-    private(set) lazy var trackingModel = TrackingModel.shared
+    let trackingModel: TrackingModel
 
     init(flux: Flux = .init(),
-         trackingModel: TrackingModel? = nil) {
+         trackingModel: TrackingModel = .shared) {
         self.flux = flux
-        
-        if let trackingModel = trackingModel {
-            self.trackingModel = trackingModel
-        }
+        self.trackingModel = trackingModel
     }
 }
 
@@ -29,7 +26,7 @@ extension Environment {
     final class Flux {
 
         let routeActionCreator: RouteActionCreator
-        let routeDispatcher: RouteActionCreator
+        let routeDispatcher: RouteDispatcher
         let routeStore: RouteStore
 
         let repositoryActionCreator: RepositoryActionCreator
@@ -41,7 +38,7 @@ extension Environment {
         let deviceStore: DeviceStore
 
         init(routeActionCreator: RouteActionCreator = .shared,
-             routeDispatcher: RouteActionCreator = .shared,
+             routeDispatcher: RouteDispatcher = .shared,
              routeStore: RouteStore = .shared,
              repositoryActionCreator: RepositoryActionCreator = .shared,
              repositoryDispatcher:  RepositoryDispatcher = .shared,

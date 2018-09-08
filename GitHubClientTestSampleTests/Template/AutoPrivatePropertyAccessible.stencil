@@ -23,24 +23,9 @@ extension PrivatePropertyAccessible where PrivatePropertiesCompatible == Self {
     }
 }
 
-protocol _OptionalType {
-    associatedtype Wrapped
-    var value: Wrapped? { get }
-}
-
-extension Optional: _OptionalType {
-    var value: Wrapped? {
-        return self
-    }
-}
-
 extension PrivateProperties where Base: NSObject {
     func property<T>(forKey key: String) -> T {
-        return base.value(forKey: key) as! T
-    }
-
-    func property<T: _OptionalType>(forKey key: String) -> T? {
-        return base.value(forKey: key) as? T
+        return Mirror(reflecting: base).children.first { $0.label == key }!.value as! T
     }
 }
 
@@ -50,9 +35,11 @@ extension {{type.name}}: PrivatePropertyAccessible {}
 
 extension PrivateProperties where Base == {{type.name}} {
     {% for variable in type.storedVariables where variable.readAccess == "private" or variable.readAccess == "fileprivate" %}
+    {% if variable|!annotated:"ignoreProperty" %}
     var {{variable.name}}: {{variable.typeName}} {
         return property(forKey: "{{variable.name}}")
     }
+    {% endif %}
     {% endfor %}
 }
 {% endfor %}

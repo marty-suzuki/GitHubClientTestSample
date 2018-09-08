@@ -32,7 +32,6 @@
 		37B3E17B213C377500357BBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B3E17A213C377500357BBF /* AppDelegate.swift */; };
 		37B3E182213C377500357BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37B3E181213C377500357BBF /* Assets.xcassets */; };
 		37B3E185213C377500357BBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B3E183213C377500357BBF /* LaunchScreen.storyboard */; };
-		37B3E190213C377500357BBF /* GitHubClientTestSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B3E18F213C377500357BBF /* GitHubClientTestSampleTests.swift */; };
 		37B5F2C32140288A00219777 /* GitHub.Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B5F2BD2140288A00219777 /* GitHub.Pagination.swift */; };
 		37B5F2C42140288A00219777 /* GitHub.Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B5F2BE2140288A00219777 /* GitHub.Session.swift */; };
 		37B5F2C62140288A00219777 /* GitHub.ItemsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B5F2C02140288A00219777 /* GitHub.ItemsResponse.swift */; };
@@ -61,6 +60,16 @@
 		37C1FE86214406C8005EB806 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE85214406C8005EB806 /* OptionalType.swift */; };
 		37C1FE8821442601005EB806 /* DeviceActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE8721442601005EB806 /* DeviceActionCreator.swift */; };
 		37C1FE8A21442756005EB806 /* EncodableLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE8921442756005EB806 /* EncodableLogger.swift */; };
+		37C1FE8E21442917005EB806 /* MockTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE8D21442917005EB806 /* MockTracker.swift */; };
+		37C1FE90214429E0005EB806 /* MockGitHubSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE8F214429E0005EB806 /* MockGitHubSession.swift */; };
+		37C1FE9321442CFA005EB806 /* MockEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9221442CFA005EB806 /* MockEnvironment.swift */; };
+		37C1FE9521442F75005EB806 /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9421442F75005EB806 /* MockUserDefaults.swift */; };
+		37C1FE9A214435DC005EB806 /* RepositoryDetailViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE99214435DC005EB806 /* RepositoryDetailViewModelTestCase.swift */; };
+		37C1FE9D21443759005EB806 /* GitHub.Repository.mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9C21443759005EB806 /* GitHub.Repository.mock.swift */; };
+		37C1FE9F214437D9005EB806 /* GitHub.User.mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9E214437D9005EB806 /* GitHub.User.mock.swift */; };
+		37C1FEA221443BF1005EB806 /* RepositorySearchViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEA121443BF1005EB806 /* RepositorySearchViewModelTestCase.swift */; };
+		37C1FEA421444018005EB806 /* _AppDelegateTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEA321444018005EB806 /* _AppDelegateTestCase.swift */; };
+		37C1FEA62144415F005EB806 /* MockApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEA52144415F005EB806 /* MockApplication.swift */; };
 		B92782C25CA6E45A0255301D /* Pods_GitHubClientTestSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BA8995EC72C085FB7863D1 /* Pods_GitHubClientTestSample.framework */; };
 		F16A0BF09EB67C63A6C61990 /* Pods_GitHubClientTestSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A62277F842B5AA3D9D44627 /* Pods_GitHubClientTestSampleTests.framework */; };
 /* End PBXBuildFile section */
@@ -106,7 +115,6 @@
 		37B3E184213C377500357BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37B3E186213C377500357BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37B3E18B213C377500357BBF /* GitHubClientTestSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubClientTestSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		37B3E18F213C377500357BBF /* GitHubClientTestSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClientTestSampleTests.swift; sourceTree = "<group>"; };
 		37B3E191213C377500357BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37B5F2BD2140288A00219777 /* GitHub.Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.Pagination.swift; sourceTree = "<group>"; };
 		37B5F2BE2140288A00219777 /* GitHub.Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.Session.swift; sourceTree = "<group>"; };
@@ -136,6 +144,16 @@
 		37C1FE85214406C8005EB806 /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
 		37C1FE8721442601005EB806 /* DeviceActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActionCreator.swift; sourceTree = "<group>"; };
 		37C1FE8921442756005EB806 /* EncodableLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableLogger.swift; sourceTree = "<group>"; };
+		37C1FE8D21442917005EB806 /* MockTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTracker.swift; sourceTree = "<group>"; };
+		37C1FE8F214429E0005EB806 /* MockGitHubSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGitHubSession.swift; sourceTree = "<group>"; };
+		37C1FE9221442CFA005EB806 /* MockEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEnvironment.swift; sourceTree = "<group>"; };
+		37C1FE9421442F75005EB806 /* MockUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
+		37C1FE99214435DC005EB806 /* RepositoryDetailViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewModelTestCase.swift; sourceTree = "<group>"; };
+		37C1FE9C21443759005EB806 /* GitHub.Repository.mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.Repository.mock.swift; sourceTree = "<group>"; };
+		37C1FE9E214437D9005EB806 /* GitHub.User.mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.User.mock.swift; sourceTree = "<group>"; };
+		37C1FEA121443BF1005EB806 /* RepositorySearchViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchViewModelTestCase.swift; sourceTree = "<group>"; };
+		37C1FEA321444018005EB806 /* _AppDelegateTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _AppDelegateTestCase.swift; sourceTree = "<group>"; };
+		37C1FEA52144415F005EB806 /* MockApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApplication.swift; sourceTree = "<group>"; };
 		47BA8995EC72C085FB7863D1 /* Pods_GitHubClientTestSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubClientTestSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79DDFDB5D74E3A3FE599692D /* Pods-GitHubClientTestSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubClientTestSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubClientTestSampleTests/Pods-GitHubClientTestSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		99F3EF4046E779D00F77DD16 /* Pods-GitHubClientTestSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubClientTestSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubClientTestSample/Pods-GitHubClientTestSample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -327,11 +345,12 @@
 		37B3E18E213C377500357BBF /* GitHubClientTestSampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				37C1FE9121442CE4005EB806 /* TestCase */,
+				37C1FE8C214428FC005EB806 /* Util */,
+				37C1FE8B214428EE005EB806 /* Mock */,
 				3703BFB2213C3B280081CA6B /* Gen */,
 				3703BFAE213C3A4A0081CA6B /* Template */,
-				37B3E18F213C377500357BBF /* GitHubClientTestSampleTests.swift */,
 				37B3E191213C377500357BBF /* Info.plist */,
-				3703BFB0213C3AD50081CA6B /* AutoPrivatePropertyAccessible.swift */,
 			);
 			path = GitHubClientTestSampleTests;
 			sourceTree = "<group>";
@@ -378,6 +397,70 @@
 				37C1FE8721442601005EB806 /* DeviceActionCreator.swift */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		37C1FE8B214428EE005EB806 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				37C1FE9B21443748005EB806 /* Data */,
+				37C1FE8D21442917005EB806 /* MockTracker.swift */,
+				37C1FE8F214429E0005EB806 /* MockGitHubSession.swift */,
+				37C1FE9221442CFA005EB806 /* MockEnvironment.swift */,
+				37C1FE9421442F75005EB806 /* MockUserDefaults.swift */,
+				37C1FEA52144415F005EB806 /* MockApplication.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		37C1FE8C214428FC005EB806 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3703BFB0213C3AD50081CA6B /* AutoPrivatePropertyAccessible.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		37C1FE9121442CE4005EB806 /* TestCase */ = {
+			isa = PBXGroup;
+			children = (
+				37C1FEA321444018005EB806 /* _AppDelegateTestCase.swift */,
+				37C1FE9621443560005EB806 /* UI */,
+			);
+			path = TestCase;
+			sourceTree = "<group>";
+		};
+		37C1FE9621443560005EB806 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				37C1FEA021443BDE005EB806 /* RepositorySearch */,
+				37C1FE982144358B005EB806 /* RepositoryDetail */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		37C1FE982144358B005EB806 /* RepositoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				37C1FE99214435DC005EB806 /* RepositoryDetailViewModelTestCase.swift */,
+			);
+			path = RepositoryDetail;
+			sourceTree = "<group>";
+		};
+		37C1FE9B21443748005EB806 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				37C1FE9C21443759005EB806 /* GitHub.Repository.mock.swift */,
+				37C1FE9E214437D9005EB806 /* GitHub.User.mock.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		37C1FEA021443BDE005EB806 /* RepositorySearch */ = {
+			isa = PBXGroup;
+			children = (
+				37C1FEA121443BF1005EB806 /* RepositorySearchViewModelTestCase.swift */,
+			);
+			path = RepositorySearch;
 			sourceTree = "<group>";
 		};
 		78B0D5C5B0D1A78B616A0B3C /* Frameworks */ = {
@@ -625,9 +708,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C1FEA62144415F005EB806 /* MockApplication.swift in Sources */,
 				3703BFB5213C3C470081CA6B /* zzz.Sourcery.out.swift in Sources */,
-				37B3E190213C377500357BBF /* GitHubClientTestSampleTests.swift in Sources */,
+				37C1FE8E21442917005EB806 /* MockTracker.swift in Sources */,
+				37C1FE9D21443759005EB806 /* GitHub.Repository.mock.swift in Sources */,
+				37C1FEA421444018005EB806 /* _AppDelegateTestCase.swift in Sources */,
+				37C1FEA221443BF1005EB806 /* RepositorySearchViewModelTestCase.swift in Sources */,
+				37C1FE90214429E0005EB806 /* MockGitHubSession.swift in Sources */,
+				37C1FE9F214437D9005EB806 /* GitHub.User.mock.swift in Sources */,
 				3703BFB1213C3AD50081CA6B /* AutoPrivatePropertyAccessible.swift in Sources */,
+				37C1FE9A214435DC005EB806 /* RepositoryDetailViewModelTestCase.swift in Sources */,
+				37C1FE9521442F75005EB806 /* MockUserDefaults.swift in Sources */,
+				37C1FE9321442CFA005EB806 /* MockEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

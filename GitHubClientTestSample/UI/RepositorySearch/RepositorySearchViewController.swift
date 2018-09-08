@@ -22,6 +22,7 @@ final class RepositorySearchViewController: UIViewController {
         return searchBar
     }()
 
+    // sourcery:begin: ignoreProperty
     private let selectedIndexPath = PublishRelay<IndexPath>()
     private let isBottom = PublishRelay<Bool>()
 
@@ -42,6 +43,7 @@ final class RepositorySearchViewController: UIViewController {
     }()
 
     private let disposeBag = DisposeBag()
+    // sourcery:end
 
     init() {
         super.init(nibName: "RepositorySearchViewController", bundle: nil)

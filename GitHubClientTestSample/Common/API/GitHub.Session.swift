@@ -13,6 +13,8 @@ extension GitHub {
 
     final class Session {
 
+        static let shared = Session()
+
         private let additionalHeaderFields: () -> [String: String]?
         private let session: URLSession
 
@@ -31,7 +33,11 @@ extension GitHub {
     }
 }
 
-extension GitHub.Session {
+protocol GitHubSessionType: class {
+    func send<T: GitHubRequest>(_ request: T) -> Observable<Either<(T.Response, GitHub.Pagination), Error>>
+}
+
+extension GitHub.Session: GitHubSessionType {
     typealias Pagination = GitHub.Pagination
     typealias SessionError = GitHub.SessionError
     typealias Response<T: GitHubRequest> = Either<(T.Response, Pagination), Error>
