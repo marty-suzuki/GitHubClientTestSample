@@ -1,16 +1,22 @@
 PODS:
+  - KIF (3.7.4):
+    - KIF/Core (= 3.7.4)
+  - KIF/Core (3.7.4)
   - Sourcery (0.13.1)
 
 DEPENDENCIES:
+  - KIF
   - Sourcery
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - KIF
     - Sourcery
 
 SPEC CHECKSUMS:
+  KIF: f3d01c109ee9d1cfe6b0f2bb2aa278e807e971e2
   Sourcery: 9ef51b8777516f204d82996441f293813158d0d7
 
-PODFILE CHECKSUM: e4485dfc4ce240ff57caa6932f3d5eac1aa13f1b
+PODFILE CHECKSUM: 740b4e643aca9061b8efc2683742a4a905a741ec
 
 COCOAPODS: 1.5.3
