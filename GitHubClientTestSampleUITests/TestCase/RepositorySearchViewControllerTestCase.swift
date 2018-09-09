@@ -37,7 +37,7 @@ final class RepositorySearchViewControllerTestCase: XCTestCase {
 
         helper.wait(timeout: 1)
 
-        wait(for: [expect], timeout: 2)
+        wait(for: [expect], timeout: 5)
         disposable.dispose()
     }
 

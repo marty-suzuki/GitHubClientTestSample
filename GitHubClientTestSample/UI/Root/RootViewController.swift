@@ -41,14 +41,10 @@ final class RootViewController: UIViewController {
         viewModel.showRepositorySearch
             .bind(to: Binder(currentNavigationController) { nc, transition in
                 switch transition {
-                case let .pop(toRoot):
-                    if toRoot {
-                        nc.popToRootViewController(animated: true)
-                    } else {
-                        nc.popViewController(animated: true)
-                    }
-                case .push:
-                    nc.pushViewController(RepositorySearchViewController(), animated: true)
+                case .set:
+                    nc.setViewControllers([RepositorySearchViewController()], animated: false)
+                case .popToRoot:
+                    nc.popToRootViewController(animated: true)
                 }
             })
             .disposed(by: disposeBag)
@@ -56,12 +52,10 @@ final class RootViewController: UIViewController {
         viewModel.showRepositoryDetail
             .bind(to: Binder(currentNavigationController) { nc, transition in
                 switch transition {
-                case let .pop(toRoot):
-                    if toRoot {
-                        nc.popToRootViewController(animated: true)
-                    } else {
-                        nc.popViewController(animated: true)
-                    }
+                case let .set(data):
+                    let root = RepositorySearchViewController()
+                    let vc = RepositoryDetailViewController(data)
+                    nc.setViewControllers([root, vc], animated: false)
                 case let .push(data):
                     let vc = RepositoryDetailViewController(data)
                     nc.pushViewController(vc, animated: true)

@@ -71,4 +71,30 @@ final class RepositoryDetailViewControllerTestCase: XCTestCase {
         disposable.dispose()
         observation.invalidate()
     }
+
+    func testTrackingEvent_pageView_repositorySearch_when_back_button_item_tap() {
+        let repository = helper.repositoryMock()
+
+        let detailVC: RepositoryDetailViewController = helper.waitViewController(timeout: 1) {
+            RouteActionCreator.shared.setRouteCommand(.repositoryDetail(.object(repository)))
+        }
+
+        let expect = expectation(description: "wait TrackingEvent.pageView(.repositorySearch)")
+        let disposable = TrackingDispatcher.shared.trackingContainer
+            .flatMap { trackingContainer -> Observable<Void> in
+                if case .pageView(.repositorySearch) = trackingContainer.event {
+                    return .just(())
+                }
+                return .empty()
+            }
+            .subscribe(onNext: {
+                expect.fulfill()
+            })
+
+        // BackBarButtonItem tap
+        detailVC.view.tap(at: CGPoint(x: 20, y: 44))
+
+        wait(for: [expect], timeout: 5)
+        disposable.dispose()
+    }
 }

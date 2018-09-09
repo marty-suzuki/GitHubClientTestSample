@@ -11,13 +11,19 @@ import RxSwift
 
 final class RootViewModel {
 
-    enum Transition<T> {
-        case push(T)
-        case pop(toRoot: Bool)
+    enum Transition<T, U, V, W> {
+        case set(T)
+        case push(U)
+        case pop(V)
+        case popToRoot(W)
     }
 
-    let showRepositorySearch: Observable<Transition<Void>>
-    let showRepositoryDetail: Observable<Transition<RouteCommand.RepositoryData>>
+    typealias RepoData = RouteCommand.RepositoryData
+    typealias RepositorySearchTransition = Transition<Void, Never, Never, Void>
+    typealias RepositoryDetailTransition = Transition<RepoData, RepoData, Never, Never>
+
+    let showRepositorySearch: Observable<RepositorySearchTransition>
+    let showRepositoryDetail: Observable<RepositoryDetailTransition>
 
     private let disposeBag = DisposeBag()
 
@@ -28,14 +34,14 @@ final class RootViewModel {
         let _routeCommand = BehaviorRelay<RouteCommand>(value: .repositorySearch)
 
         self.showRepositorySearch = _routeCommand
-            .flatMap { command -> Observable<Transition<Void>> in
+            .flatMap { command -> Observable<RepositorySearchTransition> in
                 switch command {
                 case .repositorySearch:
                     let types = viewTypes()
-                    if types.first != .repositorySearch {
-                        return .just(.push(()))
+                    if types.isEmpty {
+                        return .just(.set(()))
                     } else if types.count > 1 {
-                        return .just(.pop(toRoot: true))
+                        return .just(.popToRoot(()))
                     }
                 case .repositoryDetail:
                     break
@@ -44,13 +50,15 @@ final class RootViewModel {
             }
 
         self.showRepositoryDetail = _routeCommand
-            .flatMap { command -> Observable<Transition<RouteCommand.RepositoryData>> in
+            .flatMap { command -> Observable<RepositoryDetailTransition> in
                 switch command {
                 case .repositorySearch:
                     break
                 case let .repositoryDetail(data):
                     let types = viewTypes()
-                    if types.last != .repositoryDetail {
+                    if types.isEmpty {
+                        return .just(.set(data))
+                    } else if types.last != .repositoryDetail {
                         return .just(.push(data))
                     }
                 }
