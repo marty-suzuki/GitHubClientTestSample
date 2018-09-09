@@ -1,8 +1,8 @@
 sources:
   - GitHubClientTestSample
-  - GitHubClientTestSampleTests
+  - GitHubClientTestSampleUITests
 templates:
-  - GitHubClientTestSampleTests/Template/AutoPrivatePropertyAccessible.stencil
+  - GitHubClientTestSampleUITests/Template/AutoPrivatePropertyAccessible.stencil
 output:
   # https://bugs.swift.org/browse/SR-631
-  GitHubClientTestSampleTests/Gen/zzz.Sourcery.out.swift
+  GitHubClientTestSampleUITests/Gen/zzz.Sourcery.out.swift

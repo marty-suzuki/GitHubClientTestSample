@@ -14,4 +14,10 @@ target 'GitHubClientTestSample' do
     pod 'KIF'
   end
 
+  target 'GitHubClientTestSampleUITests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod 'Sourcery'
+    pod 'KIF'
+  end
 end
