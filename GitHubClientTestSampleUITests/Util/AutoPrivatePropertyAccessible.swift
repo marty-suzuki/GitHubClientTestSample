@@ -12,3 +12,7 @@ import UIKit
 protocol AutoPrivatePropertyAccessible {}
 
 extension RootViewController: AutoPrivatePropertyAccessible {}
+
+extension RepositorySearchViewController: AutoPrivatePropertyAccessible {}
+
+extension RepositoryDetailViewController: AutoPrivatePropertyAccessible {}

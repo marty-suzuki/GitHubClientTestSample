@@ -64,8 +64,6 @@
 		37C1FE9321442CFA005EB806 /* MockEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9221442CFA005EB806 /* MockEnvironment.swift */; };
 		37C1FE9521442F75005EB806 /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9421442F75005EB806 /* MockUserDefaults.swift */; };
 		37C1FE9A214435DC005EB806 /* RepositoryDetailViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE99214435DC005EB806 /* RepositoryDetailViewModelTestCase.swift */; };
-		37C1FE9D21443759005EB806 /* GitHub.Repository.mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9C21443759005EB806 /* GitHub.Repository.mock.swift */; };
-		37C1FE9F214437D9005EB806 /* GitHub.User.mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9E214437D9005EB806 /* GitHub.User.mock.swift */; };
 		37C1FEA221443BF1005EB806 /* RepositorySearchViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEA121443BF1005EB806 /* RepositorySearchViewModelTestCase.swift */; };
 		37C1FEA421444018005EB806 /* _AppDelegateTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEA321444018005EB806 /* _AppDelegateTestCase.swift */; };
 		37C1FEA62144415F005EB806 /* MockApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEA52144415F005EB806 /* MockApplication.swift */; };
@@ -75,8 +73,6 @@
 		37C1FEC12144DAA3005EB806 /* AutoPrivatePropertyAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEC02144DAA3005EB806 /* AutoPrivatePropertyAccessible.swift */; };
 		37C1FEC72144E613005EB806 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEC62144E613005EB806 /* Helper.swift */; };
 		37C1FECA2144E651005EB806 /* XCTestCase.helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEC92144E651005EB806 /* XCTestCase.helper.swift */; };
-		37C1FECB2144E6FA005EB806 /* GitHub.Repository.mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9C21443759005EB806 /* GitHub.Repository.mock.swift */; };
-		37C1FECC2144E6FC005EB806 /* GitHub.User.mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9E214437D9005EB806 /* GitHub.User.mock.swift */; };
 		37C1FECF2144ED4A005EB806 /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FECE2144ED4A005EB806 /* Swizzle.swift */; };
 		37C1FED32144F17B005EB806 /* RepositorySearchViewControllerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FED22144F17B005EB806 /* RepositorySearchViewControllerTestCase.swift */; };
 		37C1FED52144F4C0005EB806 /* ViewControllerLifeCycleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FED42144F4C0005EB806 /* ViewControllerLifeCycleHandler.swift */; };
@@ -85,6 +81,10 @@
 		37C1FEE12144F935005EB806 /* TrackingActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEE02144F935005EB806 /* TrackingActionCreator.swift */; };
 		37C1FEE32144F946005EB806 /* TrackingDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEE22144F946005EB806 /* TrackingDispatcher.swift */; };
 		37C1FEE52144F96A005EB806 /* TrackingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEE42144F96A005EB806 /* TrackingStore.swift */; };
+		37C1FEE721450AF6005EB806 /* UISearchBar.helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEE621450AF6005EB806 /* UISearchBar.helper.swift */; };
+		37C1FEE9214525CD005EB806 /* RepositoryDetailViewControllerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FEE8214525CD005EB806 /* RepositoryDetailViewControllerTestCase.swift */; };
+		37C1FEEA214528F6005EB806 /* GitHub.Repository.mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9C21443759005EB806 /* GitHub.Repository.mock.swift */; };
+		37C1FEEB214528F8005EB806 /* GitHub.User.mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1FE9E214437D9005EB806 /* GitHub.User.mock.swift */; };
 		B92782C25CA6E45A0255301D /* Pods_GitHubClientTestSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BA8995EC72C085FB7863D1 /* Pods_GitHubClientTestSample.framework */; };
 		F16A0BF09EB67C63A6C61990 /* Pods_GitHubClientTestSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A62277F842B5AA3D9D44627 /* Pods_GitHubClientTestSampleTests.framework */; };
 /* End PBXBuildFile section */
@@ -190,6 +190,8 @@
 		37C1FEE02144F935005EB806 /* TrackingActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingActionCreator.swift; sourceTree = "<group>"; };
 		37C1FEE22144F946005EB806 /* TrackingDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingDispatcher.swift; sourceTree = "<group>"; };
 		37C1FEE42144F96A005EB806 /* TrackingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingStore.swift; sourceTree = "<group>"; };
+		37C1FEE621450AF6005EB806 /* UISearchBar.helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.helper.swift; sourceTree = "<group>"; };
+		37C1FEE8214525CD005EB806 /* RepositoryDetailViewControllerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewControllerTestCase.swift; sourceTree = "<group>"; };
 		47BA8995EC72C085FB7863D1 /* Pods_GitHubClientTestSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubClientTestSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79DDFDB5D74E3A3FE599692D /* Pods-GitHubClientTestSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubClientTestSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubClientTestSampleTests/Pods-GitHubClientTestSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		8838142B6AFAFF868EA171BE /* Pods_GitHubClientTestSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubClientTestSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -533,6 +535,7 @@
 			children = (
 				37C1FEC62144E613005EB806 /* Helper.swift */,
 				37C1FEC92144E651005EB806 /* XCTestCase.helper.swift */,
+				37C1FEE621450AF6005EB806 /* UISearchBar.helper.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				37C1FED22144F17B005EB806 /* RepositorySearchViewControllerTestCase.swift */,
+				37C1FEE8214525CD005EB806 /* RepositoryDetailViewControllerTestCase.swift */,
 			);
 			path = TestCase;
 			sourceTree = "<group>";
@@ -888,11 +892,11 @@
 			files = (
 				37C1FEA62144415F005EB806 /* MockApplication.swift in Sources */,
 				37C1FE8E21442917005EB806 /* MockTracker.swift in Sources */,
-				37C1FE9D21443759005EB806 /* GitHub.Repository.mock.swift in Sources */,
 				37C1FEA421444018005EB806 /* _AppDelegateTestCase.swift in Sources */,
+				37C1FEEA214528F6005EB806 /* GitHub.Repository.mock.swift in Sources */,
 				37C1FEA221443BF1005EB806 /* RepositorySearchViewModelTestCase.swift in Sources */,
+				37C1FEEB214528F8005EB806 /* GitHub.User.mock.swift in Sources */,
 				37C1FE90214429E0005EB806 /* MockGitHubSession.swift in Sources */,
-				37C1FE9F214437D9005EB806 /* GitHub.User.mock.swift in Sources */,
 				37C1FE9A214435DC005EB806 /* RepositoryDetailViewModelTestCase.swift in Sources */,
 				37C1FE9521442F75005EB806 /* MockUserDefaults.swift in Sources */,
 				37C1FE9321442CFA005EB806 /* MockEnvironment.swift in Sources */,
@@ -905,11 +909,11 @@
 			files = (
 				37C1FEBE2144D9A8005EB806 /* zzz.Sourcery.out.swift in Sources */,
 				37C1FED32144F17B005EB806 /* RepositorySearchViewControllerTestCase.swift in Sources */,
-				37C1FECB2144E6FA005EB806 /* GitHub.Repository.mock.swift in Sources */,
 				37C1FECF2144ED4A005EB806 /* Swizzle.swift in Sources */,
 				37C1FEC12144DAA3005EB806 /* AutoPrivatePropertyAccessible.swift in Sources */,
+				37C1FEE9214525CD005EB806 /* RepositoryDetailViewControllerTestCase.swift in Sources */,
 				37C1FEDC2144F6B6005EB806 /* RuntimeHandler.m in Sources */,
-				37C1FECC2144E6FC005EB806 /* GitHub.User.mock.swift in Sources */,
+				37C1FEE721450AF6005EB806 /* UISearchBar.helper.swift in Sources */,
 				37C1FED52144F4C0005EB806 /* ViewControllerLifeCycleHandler.swift in Sources */,
 				37C1FEC72144E613005EB806 /* Helper.swift in Sources */,
 				37C1FECA2144E651005EB806 /* XCTestCase.helper.swift in Sources */,

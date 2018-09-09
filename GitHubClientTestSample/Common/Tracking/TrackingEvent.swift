@@ -18,7 +18,7 @@ enum TrackingEvent {
 extension TrackingEvent {
     enum PageView {
         case repositorySearch
-        case reposigoryDetail(URL)
+        case repositoryDetail(URL)
     }
 
     struct Search {
@@ -77,7 +77,7 @@ extension TrackingEvent.PageView: Encodable {
         switch self {
         case .repositorySearch:
             try container.encode("repository-search", forKey: .page)
-        case let .reposigoryDetail(url):
+        case let .repositoryDetail(url):
             try container.encode("repository-detail", forKey: .page)
             try container.encode(url, forKey: .additional)
         }

@@ -6,6 +6,7 @@
 import UIKit
 import Foundation
 import RxSwift
+import WebKit
 
 // MARK: - PrivatePropertyAccessible
 protocol PrivatePropertyAccessible {
@@ -33,6 +34,31 @@ extension PrivateProperties where Base: NSObject {
     }
 }
 
+// MARK: - RepositoryDetailViewController
+extension RepositoryDetailViewController: PrivatePropertyAccessible {}
+
+extension PrivateProperties where Base == RepositoryDetailViewController {
+    var webContainerView: UIView! {
+        return property(forKey: "webContainerView")
+    }
+    var progressView: UIProgressView! {
+        return property(forKey: "progressView")
+    }
+    var webView: WKWebView {
+        return property(forKey: "webView")
+    }
+}
+// MARK: - RepositorySearchViewController
+extension RepositorySearchViewController: PrivatePropertyAccessible {}
+
+extension PrivateProperties where Base == RepositorySearchViewController {
+    var tableView: UITableView! {
+        return property(forKey: "tableView")
+    }
+    var searchBar: UISearchBar {
+        return property(forKey: "searchBar")
+    }
+}
 // MARK: - RootViewController
 extension RootViewController: PrivatePropertyAccessible {}
 

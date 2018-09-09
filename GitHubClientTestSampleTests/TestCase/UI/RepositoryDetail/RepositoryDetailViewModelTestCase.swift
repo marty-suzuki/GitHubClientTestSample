@@ -31,8 +31,8 @@ final class RepositoryDetailViewModelTestCase: XCTestCase {
             return
         }
 
-        guard case let .pageView(.reposigoryDetail(url)) = value.event else {
-            XCTFail("value.event must be TrackingEvent.pageView(.reposigoryDetail)), but it is \(value.event)")
+        guard case let .pageView(.repositoryDetail(url)) = value.event else {
+            XCTFail("value.event must be TrackingEvent.pageView(.repositoryDetail)), but it is \(value.event)")
             return
         }
 

@@ -33,7 +33,7 @@ final class RepositoryDetailViewModel {
 
         viewDidAppear
             .withLatestFrom(htmlURL)
-            .map { TrackingEvent.pageView(.reposigoryDetail($0)) }
+            .map { TrackingEvent.pageView(.repositoryDetail($0)) }
             .subscribe(onNext: {
                 trackingModel.sendTrackingEvent($0)
             })
