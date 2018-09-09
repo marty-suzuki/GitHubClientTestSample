@@ -7,18 +7,10 @@
 //
 
 @testable import GitHubClientTestSample
-import RxCocoa
-import RxSwift
 
 final class MockTracker: TrackerType {
-    let trackingContainer: Observable<TrackingContainer>
-    private let _trackingContainer = PublishRelay<TrackingContainer>()
 
-    init() {
-        self.trackingContainer = _trackingContainer.asObservable()
-    }
-
-    func send(_ trackingContainer: TrackingContainer) {
-        _trackingContainer.accept(trackingContainer)
-    }
+    init() {}
+    
+    func send(_ trackingContainer: TrackingContainer) {}
 }

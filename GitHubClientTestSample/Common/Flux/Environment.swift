@@ -14,7 +14,7 @@ final class Environment {
     let flux: Flux
     let trackingModel: TrackingModel
 
-    init(flux: Flux = .init(),
+    init(flux: Flux = .shared,
          trackingModel: TrackingModel = .shared) {
         self.flux = flux
         self.trackingModel = trackingModel
@@ -24,6 +24,7 @@ final class Environment {
 extension Environment {
 
     final class Flux {
+        static let shared = Flux()
 
         let routeActionCreator: RouteActionCreator
         let routeDispatcher: RouteDispatcher
@@ -37,6 +38,10 @@ extension Environment {
         let deviceDispatcher: DeviceDispatcher
         let deviceStore: DeviceStore
 
+        let trackingActionCreator: TrackingActionCreator
+        let trackingDispatcher: TrackingDispatcher
+        let trackingStore: TrackingStore
+
         init(routeActionCreator: RouteActionCreator = .shared,
              routeDispatcher: RouteDispatcher = .shared,
              routeStore: RouteStore = .shared,
@@ -45,7 +50,10 @@ extension Environment {
              repositoryStore: RepositoryStore = .shared,
              deviceActionCreator: DeviceActionCreator = .shared,
              deviceDispatcher: DeviceDispatcher = .shared,
-             deviceStore: DeviceStore = .shared) {
+             deviceStore: DeviceStore = .shared,
+             trackingActionCreator: TrackingActionCreator = .shared,
+             trackingDispatcher: TrackingDispatcher = .shared,
+             trackingStore: TrackingStore = .shared) {
 
             self.routeActionCreator = routeActionCreator
             self.routeDispatcher = routeDispatcher
@@ -56,6 +64,9 @@ extension Environment {
             self.deviceActionCreator = deviceActionCreator
             self.deviceDispatcher = deviceDispatcher
             self.deviceStore = deviceStore
+            self.trackingActionCreator = trackingActionCreator
+            self.trackingDispatcher = trackingDispatcher
+            self.trackingStore = trackingStore
         }
     }
 }

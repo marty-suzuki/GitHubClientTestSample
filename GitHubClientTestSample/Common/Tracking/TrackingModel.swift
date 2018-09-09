@@ -11,19 +11,18 @@ import Foundation
 final class TrackingModel {
     static let shared = TrackingModel()
 
-    private let tracker: TrackerType
+    private let trackingActionCreator: TrackingActionCreator
     private let deviceStore: DeviceStore
 
-    init(tracker: TrackerType = Tracker.shared,
-         deviceStore: DeviceStore = .shared) {
-        self.tracker = tracker
-        self.deviceStore = deviceStore
+    init(flux: Environment.Flux = .shared) {
+        self.trackingActionCreator = flux.trackingActionCreator
+        self.deviceStore = flux.deviceStore
     }
 
     func sendTrackingEvent(_ event: TrackingEvent) {
         let container = TrackingContainer(userID: deviceStore.deviceID.value,
                                           time: Date().timeIntervalSince1970,
                                           event: event)
-        tracker.send(container)
+        trackingActionCreator.send(container)
     }
 }

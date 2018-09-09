@@ -12,14 +12,7 @@ import RxSwift
 
 final class RootViewController: UIViewController {
 
-    private lazy var currentNavigationController: UINavigationController = {
-        let navigationController = UINavigationController(navigationBarClass: nil, toolbarClass: nil)
-        addChildViewController(navigationController)
-        navigationController.view.frame = view.bounds
-        view.addSubview(navigationController.view)
-        navigationController.didMove(toParentViewController: self)
-        return navigationController
-    }()
+    private let currentNavigationController = UINavigationController(navigationBarClass: nil, toolbarClass: nil)
 
     // sourcery:begin: ignoreProperty
     private lazy var viewModel = RootViewModel(viewTypes: { [weak nc = currentNavigationController] in
@@ -39,6 +32,11 @@ final class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        addChildViewController(currentNavigationController)
+        currentNavigationController.view.frame = view.bounds
+        view.addSubview(currentNavigationController.view)
+        currentNavigationController.didMove(toParentViewController: self)
 
         viewModel.showRepositorySearch
             .bind(to: Binder(currentNavigationController) { nc, transition in

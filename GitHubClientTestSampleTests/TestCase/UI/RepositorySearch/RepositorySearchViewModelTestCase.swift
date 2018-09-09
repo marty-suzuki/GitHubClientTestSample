@@ -29,7 +29,7 @@ final class RepositorySearchViewModelTestCase: XCTestCase {
         trackingContainer = BehaviorRelay(value: nil)
         disposeBag = DisposeBag()
 
-        dependency.tracker.trackingContainer
+        dependency.trackingDispatcher.trackingContainer
             .bind(to: trackingContainer)
             .disposed(by: disposeBag)
     }
@@ -50,7 +50,7 @@ final class RepositorySearchViewModelTestCase: XCTestCase {
 
     func test_TrackingEvent_pageView_when_viewDidAppear_called_multiple_times() {
         let expectedCount = BehaviorRelay<Int>(value: 0)
-        dependency.tracker.trackingContainer
+        dependency.trackingDispatcher.trackingContainer
             .scan(0) { result, trackingContainer -> Int in
                 guard case .pageView(.repositorySearch) = trackingContainer.event else {
                     XCTFail("trackingContainer.event must be TrackingEvent.pageView(.repositorySearch)), but it is \(trackingContainer.event)")
@@ -180,14 +180,15 @@ extension RepositorySearchViewModelTestCase {
 
         let repositoryDispatcher: RepositoryDispatcher
         let repositoryStore: RepositoryStore
+        let trackingDispatcher: TrackingDispatcher
 
-        let tracker = MockTracker()
         let viewModel: RepositorySearchViewModel
 
         init() {
             let flux = Environment.Flux.mock()
             self.repositoryStore = flux.repositoryStore
             self.repositoryDispatcher = flux.repositoryDispatcher
+            self.trackingDispatcher = flux.trackingDispatcher
 
             self.viewModel = RepositorySearchViewModel(viewDidAppear: viewDidAppear.asObservable(),
                                                        searchText: searchText.asObservable(),
@@ -195,7 +196,7 @@ extension RepositorySearchViewModelTestCase {
                                                        cancelButtonClicked: cancelButtonClicked.asObservable(),
                                                        selectedIndexPath: selectedIndexPath.asObservable(),
                                                        isBottom: isBottom.asObservable(),
-                                                       environment: Environment.mock(flux: flux, tracker: tracker))
+                                                       environment: Environment.mock(flux: flux))
         }
     }
 }

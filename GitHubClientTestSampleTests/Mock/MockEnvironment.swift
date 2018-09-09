@@ -9,16 +9,16 @@
 @testable import GitHubClientTestSample
 
 extension Environment {
-    static func mock(flux: Flux = .mock(),
-                     tracker: MockTracker = .init()) -> Environment {
-        let trackingModel = TrackingModel(tracker: tracker, deviceStore: flux.deviceStore)
+    static func mock(flux: Flux = .mock()) -> Environment {
+        let trackingModel = TrackingModel(flux: flux)
         return Environment(flux: flux, trackingModel: trackingModel)
     }
 }
 
 extension Environment.Flux {
     static func mock(session: MockGitHubSession = .init(),
-                     userDefaults: MockUserDefaukts = .init()) -> Environment.Flux {
+                     userDefaults: MockUserDefaukts = .init(),
+                     tracker: MockTracker = .init()) -> Environment.Flux {
 
         let routeDispatcher = RouteDispatcher()
         let routeActionCreator = RouteActionCreator(dispatcher: routeDispatcher)
@@ -34,6 +34,10 @@ extension Environment.Flux {
         let deviceStore = DeviceStore(dispatcher: deviceDispatcher,
                                       userDefaultsManager: UserDefaultsManager(userDefaults: userDefaults))
 
+        let trackingDispatcher = TrackingDispatcher()
+        let trackingActionCreator = TrackingActionCreator(dispatcher: trackingDispatcher, tracker: tracker)
+        let trackingStore = TrackingStore(dispatcher: trackingDispatcher)
+
         return Environment.Flux(routeActionCreator: routeActionCreator,
                                 routeDispatcher: routeDispatcher,
                                 routeStore: routeStore,
@@ -42,6 +46,10 @@ extension Environment.Flux {
                                 repositoryStore: repositoryStore,
                                 deviceActionCreator: deviceActionCreator,
                                 deviceDispatcher: deviceDispatcher,
-                                deviceStore: deviceStore)
+                                deviceStore: deviceStore,
+                                trackingActionCreator: trackingActionCreator,
+                                trackingDispatcher: trackingDispatcher,
+                                trackingStore: trackingStore)
+
     }
 }

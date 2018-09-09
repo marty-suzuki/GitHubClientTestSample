@@ -20,7 +20,7 @@ final class RepositoryDetailViewModelTestCase: XCTestCase {
         let disposeBag = DisposeBag()
         let trackingContainer = BehaviorRelay<TrackingContainer?>(value: nil)
 
-        dependency.tracker.trackingContainer
+        dependency.trackingDispatcher.trackingContainer
             .bind(to: trackingContainer)
             .disposed(by: disposeBag)
 
@@ -44,15 +44,16 @@ extension RepositoryDetailViewModelTestCase {
     private struct Dependency {
         let viewDidAppear = PublishRelay<Bool>()
         let estimatedProgress = PublishRelay<Double>()
-        let tracker = MockTracker()
+        let trackingDispatcher: TrackingDispatcher
         let viewModel: RepositoryDetailViewModel
 
         init(data: RouteCommand.RepositoryData) {
-            let environemt = Environment.mock(tracker: tracker)
+            let flux = Environment.Flux.mock()
+            self.trackingDispatcher = flux.trackingDispatcher
             self.viewModel = RepositoryDetailViewModel(data: data,
                                                        viewDidAppear: viewDidAppear.asObservable(),
                                                        estimatedProgress: estimatedProgress.asObservable(),
-                                                       environment: environemt)
+                                                       environment: Environment.mock(flux: flux))
         }
     }
 }

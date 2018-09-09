@@ -17,11 +17,6 @@ final class Tracker: TrackerType {
     static let shared = Tracker()
 
     func send(_ trackingContainer: TrackingContainer) {
-
         // do sending log
-
-        #if DEBUG
-        EncodableLogger.print(trackingContainer)
-        #endif
     }
 }

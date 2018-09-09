@@ -25,7 +25,7 @@ final class _AppDelegateTestCase: XCTestCase {
         trackingContainer = BehaviorRelay(value: nil)
         disposeBag = DisposeBag()
 
-        dependency.tracker.trackingContainer
+        dependency.trackingDispatcher.trackingContainer
             .bind(to: trackingContainer)
             .disposed(by: disposeBag)
     }
@@ -61,12 +61,14 @@ final class _AppDelegateTestCase: XCTestCase {
 
 extension _AppDelegateTestCase {
     private struct Dependency {
-        let tracker = MockTracker()
+        let trackingDispatcher: TrackingDispatcher
         let appDelegate: _AppDelegate
 
         init() {
+            let flux = Environment.Flux.mock()
+            self.trackingDispatcher = flux.trackingDispatcher
             self.appDelegate = _AppDelegate(rootViewController: UIViewController(),
-                                            environment: Environment.mock(tracker: tracker))
+                                            environment: Environment.mock(flux: flux))
         }
     }
 }
