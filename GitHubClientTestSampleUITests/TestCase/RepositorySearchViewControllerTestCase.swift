@@ -60,7 +60,7 @@ final class RepositorySearchViewControllerTestCase: XCTestCase {
                 }
                 .subscribe(onNext: { search in
                     XCTAssertEqual(search.page, 1)
-                    XCTAssertEqual(search.query, searchText)
+                    XCTAssertEqual(search.query.lowercased(), searchText.lowercased())
                     expect1.fulfill()
                 })
 
@@ -99,7 +99,7 @@ final class RepositorySearchViewControllerTestCase: XCTestCase {
                 }
                 .subscribe(onNext: { search in
                     XCTAssertEqual(search.page, 2)
-                    XCTAssertEqual(search.query, searchText)
+                    XCTAssertEqual(search.query.lowercased(), searchText.lowercased())
                     expect1.fulfill()
                 })
 
