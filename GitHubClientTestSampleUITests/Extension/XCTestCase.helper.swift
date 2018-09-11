@@ -9,6 +9,7 @@
 @testable import GitHubClientTestSample
 import XCTest
 import RxSwift
+import KIF
 
 extension XCTestCase: HelperCompatible {}
 
@@ -116,5 +117,9 @@ extension Helper where Base: XCTestCase {
 
     func paginationMock() -> GitHub.Pagination {
         return GitHub.Pagination(next: nil, last: nil, first: nil, prev: nil)
+    }
+
+    func backButtonTap() {
+        rootViewController.view.tap(at: CGPoint(x: 20, y: 44))
     }
 }
