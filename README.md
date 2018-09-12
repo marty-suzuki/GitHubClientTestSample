@@ -17,6 +17,12 @@ $ make install
 
 Next, open **GitHubClientTestSample.xcworkspace** and run an application.
 
+# Application Structure
+
+Flux + MVVM
+
+![structure](./Images/structure.png)
+
 # Requirements
 
 - Xcode 9.4.1
