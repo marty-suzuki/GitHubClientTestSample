@@ -11,7 +11,6 @@ import RxCocoa
 import RxSwift
 import XCTest
 
-
 final class _AppDelegateTestCase: XCTestCase {
 
     private var dependency: Dependency!

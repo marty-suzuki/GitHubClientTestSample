@@ -32,8 +32,8 @@ extension Helper where Base: XCTestCase {
         }
 
         var vc: T! = nil
-        let expectation = base.expectation(description: "waut \(String(describing: T.self))")
-        let disposeable = viewControllerLifeCycleHandler.viewDidAppearCalled
+        let expectation = base.expectation(description: "wait \(String(describing: T.self))")
+        let disposaable = viewControllerLifeCycleHandler.viewDidAppearCalled
             .debug()
             .flatMap { ($0 as? T).map(Observable.just) ?? .empty() }
             .subscribe(onNext: {
@@ -44,7 +44,7 @@ extension Helper where Base: XCTestCase {
         execute?()
 
         base.wait(for: [expectation], timeout: TimeInterval(seconds))
-        disposeable.dispose()
+        disposaable.dispose()
 
         return vc
     }

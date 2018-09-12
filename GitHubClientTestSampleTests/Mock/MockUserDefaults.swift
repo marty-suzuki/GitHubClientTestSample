@@ -8,7 +8,7 @@
 
 @testable import GitHubClientTestSample
 
-final class MockUserDefaukts: UserDefaultsType {
+final class MockUserDefaults: UserDefaultsType {
     private var values: [String: Any] = [:]
 
     func value(forKey key: String) -> Any? {

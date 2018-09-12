@@ -17,7 +17,7 @@ extension Environment {
 
 extension Environment.Flux {
     static func mock(session: MockGitHubSession = .init(),
-                     userDefaults: MockUserDefaukts = .init(),
+                     userDefaults: MockUserDefaults = .init(),
                      tracker: MockTracker = .init()) -> Environment.Flux {
 
         let routeDispatcher = RouteDispatcher()
